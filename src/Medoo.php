@@ -10,7 +10,10 @@ namespace Qttyeah;
  * Released under the MIT license
  */
  
-
+use PDO;
+use Exception;
+use PDOException;
+use InvalidArgumentException;
 
 class Raw
 {
