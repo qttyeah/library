@@ -137,6 +137,21 @@ class Sfunc
         }
         return $obj;
     }
+	
+	/**
+     * 字符加密，不可逆
+     * @param $str
+     * @param string $name
+     * @param string $prfix
+     * @param string $suffix
+     * @param int $len
+     * @return string
+     */
+    static function pwd($str, $name = 'qttyeah', $prfix = 'qtt', $suffix = 'yeah', $len = 32)
+    {
+        $str = md5($name . $prfix . $str . $suffix);
+        return $len > 32 ? $str : substr(md5($str), 32 - abs($len));
+    }
 
     /**
      * 字符串加密
